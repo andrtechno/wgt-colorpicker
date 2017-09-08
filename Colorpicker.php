@@ -20,7 +20,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
      *
      * @var string
      */
-    public $mode = 'textInput';
+    private $mode = 'textInput';
 
     /**
      * The default color. String for hex color

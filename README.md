@@ -50,3 +50,10 @@ see Colorpicker.php.
 | livePreview | boolean | Default is true |
 | fade | boolean | Default is false |
 | slide | boolean | Default is false |
+| curtain | boolean | Default is false |
+| timeFade | int | Default is 500 |
+| timeSlide | int | Default is 500 |
+| timeCurtain | int | Default is 500 |
+| onShow | int | Default is '' |
+| onBeforeShow | int | Default is '' |
+

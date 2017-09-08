@@ -46,19 +46,19 @@ see Colorpicker.php.
 | Опция  | Тип | Описание |
 | ------------- | ------------- | ------------- |
 | `mode` | string | принимает значения: textInput, flat, selector |
-| value | string | #000000 |
-| livePreview | boolean | Default is true |
-| fade | boolean | Default is false |
-| slide | boolean | Default is false |
-| curtain | boolean | Default is false |
-| timeFade | int | Default is 500 |
-| timeSlide | int | Default is 500 |
-| timeCurtain | int | Default is **500** |
-| onShow | int | Default is '' |
-| onBeforeShow | int | Default is **''** |
-| onHide | int | Default is '' |
-| onChange | int | Default is '' |
-| onSubmit | int | Default is '' |
+| `value` | string | #000000 |
+| `livePreview` | boolean | Default is **true** |
+| `fade` | boolean | Default is **false** |
+| `slide` | boolean | Default is **false** |
+| `curtain` | boolean | Default is **false** |
+| `timeFade` | int | Default is **500** |
+| `timeSlide` | int | Default is **500** |
+| `timeCurtain` | int | Default is **500** |
+| `onShow` | js | Default is '' |
+| `onBeforeShow` | js | Default is **''** |
+| `onHide` | js | Default is '' |
+| `onChange` | js | Default is '' |
+| `onSubmit` | js | Default is '' |
 
 
 

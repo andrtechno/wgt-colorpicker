@@ -41,3 +41,9 @@ Once the extension is installed, simply use it in your code by :
 
 # Configuration
 see Colorpicker.php.
+
+
+| Опция  | Тип | Описание |
+| ------------- | ------------- | ------------- |
+| mode  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  |

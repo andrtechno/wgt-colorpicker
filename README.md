@@ -34,6 +34,10 @@ Once the extension is installed, simply use it in your code by :
 <?php
     echo $form->field($model, 'color')->widget(Colorpicker::className(), [
 
-    ]);
+    ])->textInput(['maxlength' => 7]);
  ?>
 ```
+
+
+# Configuration
+see Colorpicker.php.

@@ -2,7 +2,11 @@
 namespace panix\ext\colorpicker;
 use yii\helpers\Json;
 use yii\helpers\Html;
+use panix\engine\base\TranslationTrait;
+
 class Colorpicker extends \yii\widgets\InputWidget {
+    use TranslationTrait;
+  
     //***************************************************************************
     // Properties
     //***************************************************************************
@@ -117,7 +121,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
      */
     public function setMode($value) {
         if (!in_array($value, array('textfield', 'flat', 'selector')))
-            throw new CException(Yii::t('ColorPicker', 'Invalid mode.'));
+            throw new CException(Yii::t('colorpicker', 'Invalid mode.'));
         $this->mode = $value;
     }
 
@@ -136,7 +140,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
      */
     public function setValue($value) {
         if (!preg_match('/^[0-9A-F]{6}$/i', $value))
-            throw new CException(Yii::t('ColorPicker', 'Invalid color.'));
+            throw new CException(Yii::t('colorpicker', 'Invalid color.'));
         $this->value = $value;
     }
 
@@ -155,7 +159,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
      */
     public function setLivePreview($value) {
         if (!is_bool($value))
-            throw new CException(Yii::t('ColorPicker', 'Invalid value.'));
+            throw new CException(Yii::t('colorpicker', 'Invalid value.'));
         $this->livePreview = $value;
     }
 
@@ -169,7 +173,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
 
     public function setFade($value) {
         if (!is_bool($value))
-            throw new CException(Yii::t('ColorPicker', 'Invalid value.'));
+            throw new CException(Yii::t('colorpicker', 'Invalid value.'));
         $this->fade = $value;
     }
 
@@ -179,7 +183,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
 
     public function setSlide($value) {
         if (!is_bool($value))
-            throw new CException(Yii::t('ColorPicker', 'Invalid value.'));
+            throw new CException(Yii::t('colorpicker', 'Invalid value.'));
         $this->slide = $value;
     }
 
@@ -189,7 +193,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
 
     public function setCurtain($value) {
         if (!is_bool($value))
-            throw new CException(Yii::t('ColorPicker', 'Invalid value.'));
+            throw new CException(Yii::t('colorpicker', 'Invalid value.'));
         $this->curtain = $value;
     }
 
@@ -199,7 +203,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
 
     public function setTimeFade($value) {
         if (!is_int($value))
-            throw new CException(Yii::t('ColorPicker', 'Invalid value.'));
+            throw new CException(Yii::t('colorpicker', 'Invalid value.'));
         $this->timeFade = $value;
     }
 
@@ -209,7 +213,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
 
     public function setTimeSlide($value) {
         if (!is_int($value))
-            throw new CException(Yii::t('ColorPicker', 'Invalid value.'));
+            throw new CException(Yii::t('colorpicker', 'Invalid value.'));
         $this->timeSlide = $value;
     }
 
@@ -219,7 +223,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
 
     public function setTimeCurtain($value) {
         if (!is_int($value))
-            throw new CException(Yii::t('ColorPicker', 'Invalid value.'));
+            throw new CException(Yii::t('colorpicker', 'Invalid value.'));
         $this->timeCurtain = $value;
     }
 
@@ -261,7 +265,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
     //***************************************************************************
 
     public function run() {
-
+        $this->init_i18n(__DIR__,'colorpicker');
 
         $view = $this->getView();
         ColorpickerAsset::register($view);
@@ -346,7 +350,7 @@ EOP;
 
             case 'selector':
                 if (empty($this->selector)) {
-                    throw new CException(Yii::t('ColorPicker', 'A selector must be specified.'));
+                    throw new CException(Yii::t('colorpicker', 'A selector must be specified.'));
                 } else {
                     $selector = $this->selector;
                 }

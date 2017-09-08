@@ -42,7 +42,7 @@ Once the extension is installed, simply use it in your code by :
 # Configuration
 
 | Опция  | Тип | Описание |
-| ------------- | ------------- | ------------- |
+| --- | :---: | --- |
 | `mode` | string | ColorPicker mode: **textInput** - presents a textfield with a color picker attached (default). **flat** - presents a color picker in flat mode. **selector** - attached to a square selector |
 | `value` | string | The default color. String for hex color. Default is **#000000** |
 | `livePreview` | boolean | Whatever if the color values are filled in the fields while changing values on selector or a field. If false it may improve speed. Default is **true** |

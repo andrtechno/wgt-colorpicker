@@ -45,20 +45,20 @@ see Colorpicker.php.
 
 | Опция  | Тип | Описание |
 | ------------- | ------------- | ------------- |
-| `mode` | string | принимает значения: textInput, flat, selector |
-| `value` | string | #000000 |
-| `livePreview` | boolean | Default is **true** |
-| `fade` | boolean | Default is **false** |
-| `slide` | boolean | Default is **false** |
-| `curtain` | boolean | Default is **false** |
-| `timeFade` | int | Default is **500** |
-| `timeSlide` | int | Default is **500** |
-| `timeCurtain` | int | Default is **500** |
-| `onShow` | js | Default is '' |
-| `onBeforeShow` | js | Default is **''** |
-| `onHide` | js | Default is '' |
-| `onChange` | js | Default is '' |
-| `onSubmit` | js | Default is '' |
+| `mode` | string | ColorPicker mode: **textInput** - presents a textfield with a color picker attached (default). **flat** - presents a color picker in flat mode. **selector** - attached to a square selector |
+| `value` | string | The default color. String for hex color. Default is **#000000** |
+| `livePreview` | boolean | Whatever if the color values are filled in the fields while changing values on selector or a field. If false it may improve speed. Default is **true** |
+| `fade` | boolean | Whetever the color picker will be animated Default is **false** |
+| `slide` | boolean | Whetever the color picker will slide Default is **false** |
+| `curtain` | boolean | Whetever the color picker will appear as a curtain Default is **false** |
+| `timeFade` | int | Times for the effect delays Default is **500** |
+| `timeSlide` | int | Times for the effect delays Default is **500** |
+| `timeCurtain` | int | Times for the effect delays Default is **500** |
+| `onShow` | string | Callback function triggered when the color picker is shown Default is '' |
+| `onBeforeShow` | string | Callback function triggered before the color picker is shown Default is '' |
+| `onHide` | string | Callback function triggered when the color picker is hidden Default is '' |
+| `onChange` | string | Callback function triggered when the color is changed Default is '' |
+| `onSubmit` | string | Callback function triggered when the color it is chosen Default is '' |
 
 
 

@@ -14,7 +14,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
     /**
      * ColorPicker mode. Possible values are:
      *
-     * textfield - presents a textfield with a color picker attached (default)
+     * textInput - presents a textfield with a color picker attached (default)
      * flat - presents a color picker in flat mode
      * selector - attached to a square selector
      *

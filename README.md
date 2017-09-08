@@ -53,7 +53,14 @@ see Colorpicker.php.
 | curtain | boolean | Default is false |
 | timeFade | int | Default is 500 |
 | timeSlide | int | Default is 500 |
-| timeCurtain | int | Default is 500 |
+| timeCurtain | int | Default is **500** |
 | onShow | int | Default is '' |
-| onBeforeShow | int | Default is '' |
+| onBeforeShow | int | Default is **''** |
+| onHide | int | Default is '' |
+| onChange | int | Default is '' |
+| onSubmit | int | Default is '' |
+
+
+
+
 

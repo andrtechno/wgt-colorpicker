@@ -59,6 +59,11 @@ Once the extension is installed, simply use it in your code by :
 | `onSubmit` | string | Callback function triggered when the color it is chosen. |
 
 
-
-
+### Examaple
+```php
+<?php
+    echo $form->field($model, 'color')->widget(Colorpicker::className(), [
+        'onShow' => new JsExpression('function() {}),
+    ])->textInput(['maxlength' => 7]);
+ ?>
 

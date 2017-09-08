@@ -1,6 +1,8 @@
 <?php
-
-class ColorPicker extends CInputWidget {
+namespace panix\ext\colorpicker;
+use yii\helpers\Json;
+use yii\helpers\Html;
+class Colorpicker extends \yii\widgets\InputWidget {
     //***************************************************************************
     // Properties
     //***************************************************************************
@@ -14,7 +16,7 @@ class ColorPicker extends CInputWidget {
      *
      * @var string
      */
-    private $mode = 'textfield';
+    public $mode = 'textInput';
 
     /**
      * The default color. String for hex color
@@ -251,7 +253,7 @@ class ColorPicker extends CInputWidget {
                 $options['flat'] = 'false';
                 break;
         }
-        return CJavaScript::encode($options);
+        return Json::encode($options);
     }
 
     //***************************************************************************
@@ -259,17 +261,10 @@ class ColorPicker extends CInputWidget {
     //***************************************************************************
 
     public function run() {
-        list($name, $id) = $this->resolveNameID();
 
-        $dir = dirname(__FILE__) . DS . 'assets';
-        $baseUrl = Yii::app()->getAssetManager()->publish($dir, false, -1, YII_DEBUG);
 
-        $cs = Yii::app()->getClientScript();
-        $cs->registerCoreScript('jquery');
-        $cs->registerScriptFile($baseUrl . '/js/colorpicker.js');
-        $cs->registerScriptFile($baseUrl . '/js/eye.js');
-        $cs->registerScriptFile($baseUrl . '/js/utils.js');
-        $cs->registerCssFile($baseUrl . '/css/colorpicker.css');
+        $view = $this->getView();
+        ColorpickerAsset::register($view);
 
         $options = $this->jsOptions();
 
@@ -305,36 +300,36 @@ EOP;
         }
 
         switch ($this->mode) {
-            case 'textfield':
-                $this->htmlOptions['id'] = $id;
-                if(!isset($this->htmlOptions['class'])){
-                    $this->htmlOptions['class'] = 'form-control';
+            case 'textInput':
+                //$this->options['id'] = $this->id;
+                if(!isset($this->options['class'])){
+                    $this->options['class'] = 'form-control';
                 }
                 
-                $this->htmlOptions['size'] = !isset($this->htmlOptions['size']) ? 6 : $this->htmlOptions['size'];
-                $this->htmlOptions['maxlength'] = !isset($this->htmlOptions['maxlength']) ? 6 : $this->htmlOptions['maxlength'];
+                $this->options['size'] = !isset($this->options['size']) ? 6 : $this->options['size'];
+                $this->options['maxlength'] = !isset($this->options['maxlength']) ? 6 : $this->options['maxlength'];
                 if ($this->hasModel())
-                    $html = Html::activeTextField($this->model, $this->attribute, $this->htmlOptions);
+                    $html = Html::activeTextInput($this->model, $this->attribute, $this->options);
                 else
-                    $html = Html::textField($name, $this->value, $this->htmlOptions);
+                    $html = Html::textInput($name, $this->value, $this->options);
                 $js = <<<EOP
-$('#{$this->htmlOptions['id']}').ColorPicker({
+$('#{$this->options['id']}').ColorPicker({
    {$js_effects}
 	onSubmit: function(hsb, hex, rgb) {
-		$('#{$this->htmlOptions['id']}').val('#'+hex);
+		$('#{$this->options['id']}').val('#'+hex);
 	},
 	onBeforeShow: function() {
 		$(this).ColorPickerSetColor(this.value);
 	},
    onChange: function(hsb, hex, rgb) {
-      $('#{$this->htmlOptions['id']}').val('#'+hex);
+      $('#{$this->options['id']}').val('#'+hex);
    }
 })
 .bind('keyup', function(){
 	$(this).ColorPickerSetColor(this.value);
 });
 EOP;
-                $cs->registerScript(get_class($this) . '_' . $id, $js);
+                $view->registerJs($js);
                 echo $html;
                 break;
 
@@ -345,7 +340,7 @@ EOP;
                 $js = <<<EOP
 $('#{$id}').ColorPicker({$options});
 EOP;
-                $cs->registerScript(get_class($this) . '_' . $id, $js);
+                $view->registerJs($js);
                 echo $html;
                 break;
 
@@ -363,7 +358,7 @@ $('#{$selector}').ColorPicker({
 	}
 });
 EOP;
-                $cs->registerScript(get_class($this) . '_' . $id, $js);
+                $view->registerJs($js);
                 echo '';
                 break;
         }

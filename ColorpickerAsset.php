@@ -8,7 +8,7 @@ class ColorpickerAsset extends AssetBundle {
 
     public $sourcePath = __DIR__ . '/assets';
     public $css = [
-        'js/colorpicker.css'
+        'css/colorpicker.css'
     ];
     public $js = [
         'js/colorpicker.js',

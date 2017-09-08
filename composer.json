@@ -1,7 +1,7 @@
 {
     "name": "panix/wgt-colorpicker",
-    "description": "Widget fancybox",
-    "keywords": ["corner-cms", "extension", "widget", "fancybox"],
+    "description": "Widget colorpicker",
+    "keywords": ["corner-cms", "extension", "widget", "colorpicker"],
     "homepage": "https://github.com/andrtechno/wgt-colorpicker",
     "type": "extension",
     "license": "BSD 3-Clause",

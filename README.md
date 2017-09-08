@@ -1,6 +1,6 @@
 wgt-colorpicker
 ===========
-Widget for Yii Framework 2.0 to use [TinyMce](http://www.fancybox.com)
+Widget for Yii Framework 2.0 to use [colorpicker](http://www.eyecon.ro/colorpicker/)
 
 [![Latest Stable Version](https://poser.pugx.org/panix/wgt-colorpicker/v/stable)](https://packagist.org/packages/panix/wgt-colorpicker) [![Total Downloads](https://poser.pugx.org/panix/wgt-colorpicker/downloads)](https://packagist.org/packages/panix/wgt-colorpicker) [![Monthly Downloads](https://poser.pugx.org/panix/wgt-colorpicker/d/monthly)](https://packagist.org/packages/panix/wgt-colorpicker) [![Daily Downloads](https://poser.pugx.org/panix/wgt-colorpicker/d/daily)](https://packagist.org/packages/panix/wgt-colorpicker) [![Latest Unstable Version](https://poser.pugx.org/panix/wgt-colorpicker/v/unstable)](https://packagist.org/packages/panix/wgt-colorpicker) [![License](https://poser.pugx.org/panix/wgt-colorpicker/license)](https://packagist.org/packages/panix/wgt-colorpicker)
 

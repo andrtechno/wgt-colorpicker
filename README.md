@@ -45,7 +45,7 @@ see Colorpicker.php.
 
 | Опция  | Тип | Описание |
 | ------------- | ------------- | ------------- |
-| mode | string | принимает значения: textInput, flat, selector |
+| `mode` | string | принимает значения: textInput, flat, selector |
 | value | string | #000000 |
 | livePreview | boolean | Default is true |
 | fade | boolean | Default is false |

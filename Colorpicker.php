@@ -120,7 +120,7 @@ class Colorpicker extends \yii\widgets\InputWidget {
      * @param string $value 
      */
     public function setMode($value) {
-        if (!in_array($value, array('textfield', 'flat', 'selector')))
+        if (!in_array($value, array('textInput', 'flat', 'selector')))
             throw new CException(Yii::t('colorpicker', 'Invalid mode.'));
         $this->mode = $value;
     }

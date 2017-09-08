@@ -54,11 +54,11 @@ see Colorpicker.php.
 | `timeFade` | int | Times for the effect delays Default is **500** |
 | `timeSlide` | int | Times for the effect delays Default is **500** |
 | `timeCurtain` | int | Times for the effect delays Default is **500** |
-| `onShow` | string | Callback function triggered when the color picker is shown Default is '' |
-| `onBeforeShow` | string | Callback function triggered before the color picker is shown Default is '' |
-| `onHide` | string | Callback function triggered when the color picker is hidden Default is '' |
-| `onChange` | string | Callback function triggered when the color is changed Default is '' |
-| `onSubmit` | string | Callback function triggered when the color it is chosen Default is '' |
+| `onShow` | string | Callback function triggered when the color picker is shown. |
+| `onBeforeShow` | string | Callback function triggered before the color picker is shown. |
+| `onHide` | string | Callback function triggered when the color picker is hidden. |
+| `onChange` | string | Callback function triggered when the color is changed. |
+| `onSubmit` | string | Callback function triggered when the color it is chosen. |
 
 
 

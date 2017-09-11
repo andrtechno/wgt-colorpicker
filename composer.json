@@ -3,7 +3,7 @@
     "description": "Widget colorpicker",
     "keywords": ["corner-cms", "extension", "widget", "colorpicker"],
     "homepage": "https://github.com/andrtechno/wgt-colorpicker",
-    "type": "extension",
+    "type": "yii2-extension",
     "license": "BSD 3-Clause",
     "authors": [
         {

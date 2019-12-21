@@ -32,7 +32,7 @@ Once the extension is installed, simply use it in your code by :
 
 ```php
 <?php
-    echo $form->field($model, 'color')->widget(Colorpicker::className(), [
+    echo $form->field($model, 'color')->widget(ColorPicker::className(), [
 
     ])->textInput(['maxlength' => 7]);
  ?>
@@ -62,7 +62,7 @@ Once the extension is installed, simply use it in your code by :
 ### Examaple
 ```php
 <?php
-    echo $form->field($model, 'color')->widget(Colorpicker::className(), [
+    echo $form->field($model, 'color')->widget(ColorPicker::className(), [
         'onShow' => new JsExpression('function() {}),
     ])->textInput(['maxlength' => 7]);
  ?>

@@ -17,8 +17,6 @@ class ColorPickerAsset extends AssetBundle
     ];
     public $js = [
         'js/colorpicker.js',
-        'js/eye.js',
-        'js/utils.js',
     ];
 
     /**

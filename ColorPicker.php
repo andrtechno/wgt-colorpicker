@@ -128,7 +128,7 @@ class ColorPicker extends InputWidget
      */
     public function setMode($value)
     {
-        if (!in_array($value, array('textInput', 'flat', 'selector')))
+        if (!in_array($value, ['textInput', 'flat', 'selector','picker']))
             throw new Exception(Yii::t('colorpicker', 'INVALID_MODE'));
         $this->mode = $value;
     }
@@ -308,6 +308,10 @@ class ColorPicker extends InputWidget
             case 'selector':
                 $options['flat'] = 'false';
                 break;
+
+            case 'picker':
+                $options['flat'] = 'false';
+                break;
         }
         return Json::encode($options);
     }
@@ -396,6 +400,36 @@ EOP;
 EOP;
                 $js = <<<EOP
 $('#{$this->id}').ColorPicker({$options});
+EOP;
+                $view->registerJs($js);
+                echo $html;
+                break;
+
+            case 'picker':
+                if (!isset($this->options['class'])) {
+                    $this->options['class'] = 'form-control';
+                }
+
+                $this->options['size'] = !isset($this->options['size']) ? 6 : $this->options['size'];
+                $this->options['maxlength'] = !isset($this->options['maxlength']) ? 6 : $this->options['maxlength'];
+                if ($this->hasModel())
+                    $html = Html::activeHiddenInput($this->model, $this->attribute, $this->options);
+                else
+                    $html = Html::hiddenInput($this->name, $this->value, $this->options);
+                $html .= '<div id="'.$this->options['id'].'-selector" class="colorpicker_select dark"></div>';
+
+                $js = <<<EOP
+                
+var value = $('#{$this->options['id']}').val();
+$('#{$this->options['id']}-selector').css('backgroundColor', value);
+
+$('#{$this->options['id']}-selector').ColorPicker({
+   {$js_effects}
+	onChange: function (hsb, hex, rgb) {
+		$('#{$this->options['id']}-selector').css('backgroundColor', '#' + hex);
+		$('#{$this->options['id']}').val('#'+hex);
+	}
+});
 EOP;
                 $view->registerJs($js);
                 echo $html;
